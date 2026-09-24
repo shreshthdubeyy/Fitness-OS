@@ -11,6 +11,11 @@ export const metadata: Metadata = {
   title: "Fitness OS | Phone-First Fitness Engine",
   description: "Mobile-first precision health, calorie budget, macro targets, and OpenGym workouts.",
   manifest: "/manifest.json",
+  icons: {
+    icon: "/logo.svg",
+    shortcut: "/logo.svg",
+    apple: "/logo.svg",
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",

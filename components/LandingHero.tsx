@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import { Logo } from './Logo';
 import {
   Flame,
   Dumbbell,
@@ -23,7 +24,10 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
   return (
     <div className="max-w-4xl mx-auto space-y-10 py-6 sm:py-12 px-4">
       {/* Product Hero Header */}
-      <div className="text-center space-y-4 max-w-2xl mx-auto">
+      <div className="text-center space-y-4 max-w-2xl mx-auto flex flex-col items-center">
+        <div className="mb-2 transition-transform hover:scale-105">
+          <Logo size={64} />
+        </div>
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-100">
           <ShieldCheck className="w-3.5 h-3.5 text-blue-600" /> Professional Health Platform
         </div>

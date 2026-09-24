@@ -1,111 +1,131 @@
-# ⚡ Fitness OS — Phone-First Precision Health & OpenGym Engine
-
 <p align="center">
-  <img src="public/logo.jpg" alt="Fitness OS Logo" width="180" style="border-radius: 20px;" />
+  <img src="public/logo.svg" alt="Fitness OS Logo" width="120" />
 </p>
 
-> A mobile-first, privacy-focused fitness operating system built with Next.js 16, TypeScript, Tailwind CSS, and OpenGym workouts. Features precision calorie budgeting, 7,700 kcal fat loss math, multi-user local storage, and AI coaching.
+<h1 align="center">⚡ Fitness OS</h1>
 
-![Next.js 16](https://img.shields.io/badge/Next.js-16.3-black?style=for-the-badge&logo=next.js)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38BDF8?style=for-the-badge&logo=tailwindcss)
-![PWA Ready](https://img.shields.io/badge/PWA-Standalone-emerald?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
+<p align="center">
+  <b>Phone-First Precision Health & OpenGym Engine</b><br />
+  <i>A mobile-first, privacy-focused fitness operating system built for accurate calorie budgeting, OpenGym workout routines, 7-day weight analytics, and AI coaching.</i>
+</p>
+
+<p align="center">
+  <a href="#-key-features">Key Features</a> •
+  <a href="#%EF%B8%8F-tech-stack">Tech Stack</a> •
+  <a href="#-scientific-formulas">Math & Formulas</a> •
+  <a href="#-getting-started">Getting Started</a> •
+  <a href="#-deployment">Deployment</a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-16.3-black?style=for-the-badge&logo=next.js" alt="Next.js 16" />
+  <img src="https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-v4-38BDF8?style=for-the-badge&logo=tailwindcss" alt="Tailwind CSS" />
+  <img src="https://img.shields.io/badge/PWA-Standalone_Ready-emerald?style=for-the-badge" alt="PWA Ready" />
+  <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" alt="License" />
+</p>
 
 ---
 
 ## 🌟 Key Features
 
-### 📱 1. Phone-First Mobile Architecture
-- **Native Bottom Navigation Bar**: Anchored thumb-friendly tabs for 🏠 **Plan**, 🏋️ **Workouts**, 📈 **Progress**, and 🤖 **AI Coach**.
-- **Progressive Web App (PWA)**: Open on Safari or Chrome and tap **"Add to Home Screen"** to install as a full-screen mobile app icon without browser bars.
-- **One-Handed Ergonomics**: Large tap targets (44px+) designed specifically for iOS and Android viewports.
+### 📱 1. Phone-First Mobile Ergonomics
+- **Native Bottom Navigation Bar**: Anchored, thumb-friendly navigation tabs for **Plan**, **Workouts**, **Progress**, and **AI Coach**.
+- **Progressive Web App (PWA)**: Built-in Web App Manifest supporting full-screen standalone installation on iOS and Android.
+- **High-Density Mobile UI**: Clean, restrained aesthetic built without unnecessary visual clutter or bloated animations.
 
-### 🎯 2. Precision Energy & Calorie Engine
-- **Directional Goal Logic**: Correctly calculates a **Caloric Deficit** whenever target weight is lower than current weight ($7,700\text{ kcal/kg}$ energy math), while keeping protein high ($2.2\text{ g/kg}$) for muscle preservation.
-- **Consumer Readability**: Plain English terminology (**Resting Calories**, **Daily Energy Burn**, **Calorie Budget**, **Fat Loss Pace**).
-- **Diet vs. Activity Split**: Configurable slider allocating deficit between diet reduction and active exercise.
-- **Safety Guardrails**: Rate-of-loss warning if target weekly loss exceeds $1.0\text{--}1.2\%$ body weight/week.
+### 🎯 2. Directional Calorie & Goal Math
+- **7,700 kcal/kg Fat Loss Standard**: Enforces a caloric deficit whenever target weight is lower than current weight ($7,700 \text{ kcal}$ per kg of body fat loss).
+- **Muscle Preservation Protocol**: Allocates protein at $2.2 \text{ g/kg}$ of body weight to retain lean muscle tissue during weight loss.
+- **Consumer Terminology**: Clear English labels (**Resting Calories**, **Daily Energy Burn**, **Calorie Budget**, **Fat Loss Pace**).
+- **Diet vs. Exercise Split**: Custom ratio slider to balance caloric reduction between food intake and physical exercise.
 
-### 🏋️ 3. OpenGym Workout Integration
-- **Structured Routines**: Push / Pull / Legs (PPL), Upper / Lower Split, and Full Body Recomp.
-- **Interactive Set Logger**: Log sets, reps, and target weights with set completion checkboxes.
-- **Built-in Rest Timer**: Automated 60s / 90s countdown rest timer.
+### 🏋️ 3. OpenGym Workout Logger
+- **Pre-loaded Training Splits**: Includes Push/Pull/Legs (PPL), Upper/Lower, and Full Body routines.
+- **Set & Rep Logger**: Track completed sets, target weights, and exercise execution notes.
+- **Built-in Rest Timer**: Integrated 60s and 90s interval timers with audio/visual feedback.
 
-### 📈 4. Weight Progress & 7-Day Trend Analytics
-- **Daily Weight Log**: Log daily weight entries stored locally.
-- **7-Day Rolling Averages**: Evaluates progress states (*On Track*, *Slower Than Planned*, *Faster Than Planned*) to ignore single-day weight fluctuations.
+### 📈 4. Weight Trend Analytics
+- **Daily Entry Tracker**: Record daily weigh-ins stored directly on device.
+- **7-Day Rolling Averages**: Smooths out daily water weight fluctuations to compute true progress states (*On Track*, *Slower Than Planned*, *Faster Than Planned*).
 
-### 🤖 5. Dual-Engine AI Fitness Coach
-- **OpenAI Integration**: Calls `gpt-4o-mini` via `POST /api/recommendations` when `OPENAI_API_KEY` is present.
-- **Smart Fallback Generator**: Works 100% offline without API keys, producing 5 structured recommendations across Nutrition, Training, Hydration, Recovery, and Mindset.
+### 🤖 5. Dual-Engine AI Coach
+- **OpenAI Integration**: Directly streams tailored guidance via `gpt-4o-mini` when an `OPENAI_API_KEY` is provided.
+- **Offline Fallback Engine**: Operates 100% offline without API keys, providing 5 structured recommendations across Nutrition, Training, Hydration, Recovery, and Mindset.
 
 ### 👤 6. Client-Side Multi-User Profiles
-- **Multi-User Profile Switching**: Multiple users on the same phone/browser can create isolated profiles (e.g. *Shreshth*, *Alex*, *Sarah*).
-- **Optional PIN Authentication**: 4-digit PIN lock for profile privacy.
-- **100% Private & Free**: All data stays on device `localStorage`—zero cloud database costs!
+- **Multi-Profile Isolation**: Create and switch between isolated local profiles (e.g. *Personal*, *Partner*, *Guest*).
+- **PIN Privacy Lock**: Optional 4-digit PIN protection for profile data.
+- **100% Privacy & Zero Server Cost**: All data persists in browser `localStorage` with zero database or API server overhead.
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Layer | Technology |
+| Domain | Technology |
 | :--- | :--- |
 | **Framework** | Next.js 16 (App Router, Turbopack) |
-| **Language** | TypeScript 5 (Strict Mode, 0 `any` types) |
+| **Language** | TypeScript 5 (Strict Type Checking) |
 | **Styling** | Tailwind CSS v4 + Lucide Icons |
-| **PWA** | Web App Manifest + iOS Standalone Meta |
-| **Storage** | Device `localStorage` (User-partitioned) |
-| **Deployment** | Vercel (100% Free Tier Compatible) |
+| **PWA Support** | Web App Manifest + iOS Standalone Meta Tags |
+| **State & Storage** | Device `localStorage` (User-partitioned) |
+| **AI Integration** | OpenAI API (`gpt-4o-mini`) + Offline Rule Engine |
+| **Deployment** | Vercel (Static / Serverless Edge) |
 
 ---
 
-## 📐 Scientific Formulas & Heuristics
+## 📐 Scientific Formulas
 
-```text
-Resting Calories (BMR - Mifflin-St Jeor):
-  Male = 10W + 6.25H - 5A + 5
-  Female = 10W + 6.25H - 5A - 161
+### Resting Calories (BMR - Mifflin-St Jeor)
+$$BMR_{\text{male}} = 10 \times \text{Weight (kg)} + 6.25 \times \text{Height (cm)} - 5 \times \text{Age} + 5$$
+$$BMR_{\text{female}} = 10 \times \text{Weight (kg)} + 6.25 \times \text{Height (cm)} - 5 \times \text{Age} - 161$$
 
-Daily Energy Burn (TDEE):
-  TDEE = BMR × Activity Multiplier (1.2x – 1.9x)
+### Daily Energy Burn (TDEE)
+$$TDEE = BMR \times \text{Activity Multiplier } (1.2 \times \text{ to } 1.9 \times)$$
 
-Fat Loss Energy Deficit:
-  Total Journey Deficit = (Current Weight - Target Weight) × 7,700 kcal
-
-Hydration Target:
-  Baseline Water = Body Weight (kg) × 35 ml
-```
+### Target Journey Deficit
+$$\text{Total Deficit (kcal)} = (\text{Current Weight} - \text{Target Weight}) \times 7,700 \text{ kcal}$$
 
 ---
 
-## 🚀 Quick Start (Local Development)
+## 🚀 Getting Started
 
-```bash
-# 1. Clone the repository
-git clone https://github.com/shreshthdubeyy/Fitness-App.git
+### Prerequisites
+- Node.js 18.x or higher
+- npm 9.x or higher
 
-# 2. Navigate to directory
-cd Fitness-App
+### Installation & Local Setup
 
-# 3. Install dependencies
-npm install
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/shreshthdubeyy/Fitness-App.git
+   cd Fitness-App
+   ```
 
-# 4. Start local development server
-npm run dev
-```
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-Open **[http://localhost:3000](http://localhost:3000)** in your browser!
+3. **Run the development server**:
+   ```bash
+   npm run dev
+   ```
+
+4. **Open in Browser**:
+   Navigate to `http://localhost:3000` to interact with the application.
 
 ---
 
-## 🌐 Deploy to Vercel (100% Free Forever)
+## 🌐 Deployment
 
-1. Push your repository to **GitHub**.
-2. Sign in to **[Vercel.com](https://vercel.com)** with your GitHub account.
-3. Click **"Add New" → "Project"** and select `shreshthdubeyy/Fitness-App`.
-4. *(Optional)* Add Environment Variable `OPENAI_API_KEY` for live AI chat completions.
-5. Click **Deploy**. Your app will be live in ~60 seconds!
+### Deploy to Vercel (1-Click Hosting)
+
+1. Push your repository to GitHub.
+2. Log into [Vercel.com](https://vercel.com) with your GitHub account.
+3. Select **Add New → Project** and import `Fitness-App`.
+4. *(Optional)* Add an Environment Variable named `OPENAI_API_KEY` for live AI chat completions.
+5. Click **Deploy**. Vercel will automatically build and publish your application.
 
 ---
 

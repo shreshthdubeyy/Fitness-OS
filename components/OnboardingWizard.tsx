@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { Logo } from './Logo';
 import { FitnessInput, Gender, Goal, UnitSystem } from '@/lib/types';
 import { ftInToCm } from '@/lib/calculator';
 import { User, Ruler, Weight, Target, ArrowRight, ArrowLeft, CheckCircle2 } from 'lucide-react';
@@ -53,13 +54,16 @@ export const OnboardingWizard: React.FC<OnboardingWizardProps> = ({
       <div className="bg-white rounded-2xl border border-slate-200 shadow-xs p-6 sm:p-8 space-y-6">
         {/* Step Indicator Header */}
         <div className="flex items-center justify-between border-b border-slate-100 pb-4">
-          <div>
-            <span className="text-[10px] font-bold uppercase tracking-wider text-blue-600">
-              One-Time Setup — Step {step} of 3
-            </span>
-            <h2 className="text-lg font-bold text-slate-900 mt-0.5">
-              {step === 1 ? 'Basic Info & Gender' : step === 2 ? 'Body Measurements' : 'Target Goal & Timeline'}
-            </h2>
+          <div className="flex items-center gap-3">
+            <Logo size={40} />
+            <div>
+              <span className="text-[10px] font-bold uppercase tracking-wider text-blue-600">
+                One-Time Setup — Step {step} of 3
+              </span>
+              <h2 className="text-lg font-bold text-slate-900 mt-0.5">
+                {step === 1 ? 'Basic Info & Gender' : step === 2 ? 'Body Measurements' : 'Target Goal & Timeline'}
+              </h2>
+            </div>
           </div>
           <button
             type="button"
